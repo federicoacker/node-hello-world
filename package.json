@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js",
+    "start": "node --env-file=.env main.js",
     "watch": "node --watch main.js"
   },
   "keywords": [],
