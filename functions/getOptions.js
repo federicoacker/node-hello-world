@@ -1,10 +1,35 @@
-
-const argumentArray = process.argv.splice(2);
+process.argv.shift();
+process.argv.shift();
+const argumentArray = process.argv;
 
 const options = {
     command: "",
     category: "",
+    asciifyTargetPath: "",
 }
+
+if(argumentArray.includes("--asciify")){
+    getAsciifyOptions();
+}
+else{
+    getAiOptions();
+}
+
+function getAsciifyOptions() {
+    for(let i = 0; i < argumentArray.length; i++){
+        const current = argumentArray[i];
+        console.log(current);
+        if(current.startsWith("--")){
+            options.command = current;
+        }
+        else{
+            options.asciifyTargetPath = current;
+        }
+    }
+
+}
+
+function getAiOptions() {
 
 for(let i = 0; i < argumentArray.length; i++){
     const current = argumentArray[i];
@@ -14,6 +39,7 @@ for(let i = 0; i < argumentArray.length; i++){
     if(current.startsWith("--category=")){
         options.category=current.split("=")[1];
     }
+}
 }
 
 export default options;
