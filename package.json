@@ -11,5 +11,8 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.33.2",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "cowsayjs": "^2.0.0"
+  }
 }
