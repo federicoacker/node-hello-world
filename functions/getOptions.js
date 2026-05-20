@@ -8,7 +8,6 @@ const options = {
 
 for(let i = 0; i < argumentArray.length; i++){
     const current = argumentArray[i];
-    console.log(current);
     if(current.startsWith("--") && !current.includes("=")){
         options.command=current;
     }
