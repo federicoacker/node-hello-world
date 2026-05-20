@@ -6,6 +6,7 @@ const options = {
     command: "",
     category: "",
     asciifyTargetPath: "",
+    animal:""
 }
 
 if(argumentArray.includes("--pokemon")){
@@ -32,10 +33,13 @@ function getAiOptions() {
 
 for(let i = 0; i < argumentArray.length; i++){
     const current = argumentArray[i];
-    if(current.startsWith("--") && !current.includes("=")){
+    if(current.startsWith("--animal=")){
+        options.animal=current.split("=")[1];
+    }
+    else if(current.startsWith("--") && !current.includes("=")){
         options.command=current;
     }
-    if(current.startsWith("--category=")){
+    else if(current.startsWith("--category=")){
         options.category=current.split("=")[1];
     }
 }
