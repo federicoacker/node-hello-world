@@ -3,6 +3,9 @@ import { ChatAnthropic } from "@langchain/anthropic";
 
 function askClaude(options){
     const {command, category} = options;
+    if(command.trim() === "" || category.trim() === ""){
+        throw new Error("Hai dimenticato i comandi --comandoASceltaTua --category=scegliUnaCategoria");
+    }
 
     const model =  new ChatAnthropic(
         {
