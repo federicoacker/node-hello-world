@@ -8,7 +8,7 @@ const options = {
     asciifyTargetPath: "",
 }
 
-if(argumentArray.includes("--asciify")){
+if(argumentArray.includes("--pokemon")){
     getAsciifyOptions();
 }
 else{
@@ -18,7 +18,6 @@ else{
 function getAsciifyOptions() {
     for(let i = 0; i < argumentArray.length; i++){
         const current = argumentArray[i];
-        console.log(current);
         if(current.startsWith("--")){
             options.command = current;
         }
